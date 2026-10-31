@@ -1,4 +1,4 @@
-# Taller de Git · Fundamentos
+# Taller de Git y GitHub · Fundamentos
 
 Repositorio de práctica de Luis David Gonzalez Alzate.
 
