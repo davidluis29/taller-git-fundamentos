@@ -1,4 +1,4 @@
-# Mi primer repositorio · Fundamentos
+# Mi primer repositorio de Git y GitHub · Fundamentos
 
 Repositorio de práctica de Luis David Gonzalez Alzate.
 
