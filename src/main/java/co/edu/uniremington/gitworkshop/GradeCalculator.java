@@ -3,6 +3,8 @@ package co.edu.uniremington.gitworkshop;
 public class GradeCalculator {
 
   static final double WEIGHT = 0.25;
+  static final double PASSING_GRADE = 3.0;
+
 
   public static void main(String[] args) {
     double coursework = readGrade("Seguimiento");
@@ -12,6 +14,12 @@ public class GradeCalculator {
 
     double finalGrade = finalGrade(coursework, midterm1, midterm2, project);
     IO.println("Nota definitiva: %.1f".formatted(finalGrade));
+    
+     if (passed(finalGrade)) {
+      IO.println("Aprobó el curso.");
+    } else {
+      IO.println("No aprobó el curso.");
+    }
   }
 
   static double finalGrade(double coursework, double midterm1,
@@ -19,8 +27,14 @@ public class GradeCalculator {
     return (coursework + midterm1 + midterm2 + project) * WEIGHT;
   }
 
+  static boolean passed(double finalGrade) {
+return finalGrade >= PASSING_GRADE;
+}
+
   static double readGrade(String component) {
     String input = IO.readln(component + ": ");
     return Double.parseDouble(input.strip());
   }
+  
+  
 }
