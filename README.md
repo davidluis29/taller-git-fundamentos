@@ -1,4 +1,4 @@
-# Taller de Git · Fundamentos
+# Mi primer repositorio · Fundamentos
 
 Repositorio de práctica de Luis David Gonzalez Alzate.
 
