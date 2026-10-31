@@ -4,6 +4,8 @@ public class GradeCalculator {
 
   static final double WEIGHT = 0.25;
   static final double PASSING_GRADE = 3.0;
+  static final double EXCELLENT_GRADE = 4.5;
+  static final double GOOD_GRADE = 4.0;
 
 
   public static void main(String[] args) {
@@ -15,11 +17,12 @@ public class GradeCalculator {
     double finalGrade = finalGrade(coursework, midterm1, midterm2, project);
     IO.println("Nota definitiva: %.1f".formatted(finalGrade));
     
-     if (passed(finalGrade)) {
+    if (passed(finalGrade)) {
       IO.println("Aprobó el curso.");
     } else {
       IO.println("No aprobó el curso.");
     }
+    IO.println("Desempeño: " + performance(finalGrade));
   }
 
   static double finalGrade(double coursework, double midterm1,
@@ -28,8 +31,21 @@ public class GradeCalculator {
   }
 
   static boolean passed(double finalGrade) {
-return finalGrade >= PASSING_GRADE;
-}
+    return finalGrade >= PASSING_GRADE;
+  }
+
+  static String performance(double finalGrade) {
+    if (finalGrade >= EXCELLENT_GRADE) {
+      return "Excelente";
+    }
+    if (finalGrade >= GOOD_GRADE) {
+      return "Bueno";
+    }
+    if (passed(finalGrade)) {
+      return "Aceptable";
+    }
+    return "Insuficiente";
+  }
 
   static double readGrade(String component) {
     String input = IO.readln(component + ": ");
